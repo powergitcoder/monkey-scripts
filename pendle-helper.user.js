@@ -2,8 +2,8 @@
 // @name         Pendle Yield Helper
 // @namespace    http://tampermonkey.net/
 // @version      2024-04-12
-// @description  try to take over the world!
-// @author       You
+// @description  Show Pendle PT Token TRUE APR
+// @author       Power Ricky
 // @match        https://app.pendle.finance/*
 // @require      https://code.jquery.com/jquery-3.7.1.min.js#sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
