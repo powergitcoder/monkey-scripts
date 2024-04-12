@@ -15,20 +15,14 @@
 var toInsertHTML = '<div id="tm-box" class="pp-alert border min-h-10 rounded-xl text-base px-4 py-2 mt-4"><ol id="tm-insert"></ol></div>'
 
 function showPTInfo (jNode) {
-    // 获取当前页面的 URL
-    var currentURL = window.location.href;
-
     // 定义正则表达式模式，匹配当前market
-    var regex = /\/markets\/([^\/]+)\/swap/;
+    const url = new URL(window.location.href)
 
-    // 使用正则表达式匹配 URL
-    var matches = currentURL.match(regex);
+    const parts = url.pathname.split('/')
 
-    // 如果有匹配项，则提取第一个捕获组的值
-    if (matches && matches.length > 1) {
-        var extractedString = matches[1];
-        console.log("Market Address:", extractedString);
-        fetch("https://api-v2.pendle.finance/core/v1/42161/markets/" + extractedString).then(function(response) {
+    if (parts && parts.length == 5) {
+        console.log("Market Address:", parts[3]);
+        fetch(`https://api-v2.pendle.finance/core/v1/${parseInt(ethereum.chainId)}/markets/${parts[3]}`).then(function(response) {
             // 检查响应状态
             if (!response.ok) {
                 throw new Error('网络错误：' + response.status);
