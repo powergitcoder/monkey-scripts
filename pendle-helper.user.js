@@ -22,7 +22,7 @@ function showPTInfo (jNode) {
 
     if (parts && parts.length == 5) {
         console.log("Market Address:", parts[3]);
-        fetch(`https://api-v2.pendle.finance/core/v1/${parseInt(ethereum.chainId)}/markets/${parts[3]}`).then(function(response) {
+        fetch(`https://api-v2.pendle.finance/core/v1/${parseInt(ethereum.chainId, 16)}/markets/${parts[3]}`).then(function(response) {
             // 检查响应状态
             if (!response.ok) {
                 throw new Error('网络错误：' + response.status);
