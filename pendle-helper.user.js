@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pendle Yield Helper
 // @namespace    http://tampermonkey.net/
-// @version      v1.0.0
+// @version      v1.0.1
 // @description  Show Pendle PT Token TRUE APR
 // @author       Power Ricky
 // @match        https://app.pendle.finance/*
@@ -20,9 +20,18 @@ function showPTInfo (jNode) {
 
     const parts = url.pathname.split('/')
 
-    if (parts && parts.length == 5) {
-        console.log("Market Address:", parts[3]);
-        fetch(`https://api-v2.pendle.finance/core/v1/${parseInt(ethereum.chainId, 16)}/markets/${parts[3]}`).then(function(response) {
+    if (parts.length != 5) {
+        console.log("未能成功解析 Market Address");
+        return;
+    }
+
+    console.log(`Market Address: ${parts[3]} on ${window.ethereum.chainId}`);
+
+    window.ethereum.request({
+        "method": "eth_chainId",
+        "params": []
+    }).then(function(chainId){
+        fetch(`https://api-v2.pendle.finance/core/v1/${parseInt(chainId, 16)}/markets/${parts[3]}`).then(function(response) {
             // 检查响应状态
             if (!response.ok) {
                 throw new Error('网络错误：' + response.status);
@@ -70,9 +79,7 @@ function showPTInfo (jNode) {
             // 处理错误
             console.error('错误:', error);
         });
-    } else {
-        console.log("未找到匹配的部分");
-    }
+    });
 
 }
 
