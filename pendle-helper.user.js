@@ -78,5 +78,5 @@ function showPTInfo (jNode) {
 
 (function() {
     'use strict';
-    waitForKeyElements("button[text='PT'] > span:contains('PT')", showPTInfo);
+    waitForKeyElements("span[data-test='expires-in']", showPTInfo);
 })();
