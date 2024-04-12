@@ -41,12 +41,12 @@ function showPTInfo (jNode) {
         })
             .then(function(data) {
             // 打印响应数据
-            var underlyingAsset = data.underlyingAsset;
+            var accountingAsset = data.accountingAsset;
             var pt = data.pt;
             var yt = data.yt;
-            var underlysingAssetText = `<li class="text-l font-semibold">${underlyingAsset.simpleSymbol} $${underlyingAsset.price.usd.toFixed(4)}</li>`;
-            var ptText = `<li>${pt.simpleSymbol} 💰 ${pt.price.acc.toFixed(4)} ${underlyingAsset.simpleSymbol} 💵 $${pt.price.usd.toFixed(4)}</li>`;
-            var ytText = `<li>${yt.simpleSymbol} 💰 ${yt.price.acc.toFixed(4)} ${underlyingAsset.simpleSymbol} 💵 $${yt.price.usd.toFixed(4)}</li>`;
+            var underlysingAssetText = `<li class="text-l font-semibold">${accountingAsset.simpleSymbol} $${accountingAsset.price.usd.toFixed(4)}</li>`;
+            var ptText = `<li>${pt.simpleSymbol} 💰 ${pt.price.acc.toFixed(4)} ${accountingAsset.simpleSymbol} 💵 $${pt.price.usd.toFixed(4)}</li>`;
+            var ytText = `<li>${yt.simpleSymbol} 💰 ${yt.price.acc.toFixed(4)} ${accountingAsset.simpleSymbol} 💵 $${yt.price.usd.toFixed(4)}</li>`;
 
             const endDate = moment(data.expiry);
             const startDate = moment();
