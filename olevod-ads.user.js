@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         olevod ads remover
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  remove unusefull ads from oledvod website
 // @author       Power Ricky
 // @require      https://code.jquery.com/jquery-3.7.1.min.js#sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
@@ -15,20 +15,29 @@
     let intervalID;
     intervalID = setInterval(function(){
 
-        var debug = false;
-        var rightSidebar = document.querySelector("div.pc-content > div.right");
+        var debug = true;
+        var rightSidebar = document.querySelector("div.pc-content > div.right .img_bg");
 
-        if(rightSidebar != null){
+        if (rightSidebar != null) {
+            clearInterval(intervalID);
+
+            for (var i = 0; i < 10; i++) {
+                var tmp = $(".img_bg");
+                if (tmp != null) {
+                    tmp.remove();
+                    if (debug) console.log("img_bg removed");
+                }
+            }
+
             GM_addStyle(`
                 .pc-player-content>.right {
-                    min-width: 0px;
+                    min-width: 300px;
                 }
             `);
-            clearInterval(intervalID);
-            if (debug) console.log("interval cleared");
+
             $("div.search.pc-search").remove();
             $(".pc-sdier").remove();
-            
+            if (debug) console.log("interval cleared");
         } else {
             if (debug) console.log("found no right sidebar");
         }
