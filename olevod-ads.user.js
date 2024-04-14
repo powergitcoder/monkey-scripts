@@ -5,17 +5,24 @@
 // @description  remove unusefull ads from oledvod website
 // @author       Power Ricky
 // @require      https://code.jquery.com/jquery-3.7.1.min.js#sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
-// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @match        https://www.olevod.tv/player/vod/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=olevod.tv
 // @grant        none
 // ==/UserScript==
 
-function removeAds(jNode) {
-    $("#pane-first > div.tab-live").remove();
-}
-
 (function() {
     'use strict';
-    waitForKeyElements("#pane-first > div.tab-live", removeAds, true);
+	var debug = false;
+    setInterval(function(){
+
+        var adSidebar = document.querySelector("#pane-first > div.tab-live");
+        if(adSidebar != null){
+            if(debug) console.log("remove ad sidebar");
+            adSidebar.remove();
+        } else {
+            if(debug) console.log("found no ad sidebar");
+        }
+
+    }, 500);
+
 })();
