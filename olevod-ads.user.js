@@ -31,7 +31,7 @@
 
             GM_addStyle(`
                 .pc-player-content>.right {
-                    min-width: 300px;
+                    min-width: 260px;
                 }
             `);
 
