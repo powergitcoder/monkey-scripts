@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pendle Yield Helper
 // @namespace    http://tampermonkey.net/
-// @version      v1.0.3
+// @version      1.0.3
 // @description  Show Pendle PT Token TRUE APR
 // @author       Power Ricky
 // @match        https://app.pendle.finance/*
