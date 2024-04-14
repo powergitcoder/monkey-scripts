@@ -25,6 +25,8 @@
                 }
             `);
             clearInterval(intervalID);
+
+            $("div.search.pc-search").remove();
             if (debug) console.log("interval cleared");
         } else {
             if (debug) console.log("found no right sidebar");
