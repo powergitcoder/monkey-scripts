@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         olevod ads remover
 // @namespace    http://tampermonkey.net/
-// @version      v1.0.0
+// @version      v1.0.1
 // @description  remove unusefull ads from oledvod website
 // @author       Power Ricky
 // @require      https://code.jquery.com/jquery-3.7.1.min.js#sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
