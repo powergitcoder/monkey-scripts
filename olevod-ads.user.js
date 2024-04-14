@@ -25,9 +25,10 @@
                 }
             `);
             clearInterval(intervalID);
-
-            $("div.search.pc-search").remove();
             if (debug) console.log("interval cleared");
+            $("div.search.pc-search").remove();
+            $(".pc-sdier").remove();
+            
         } else {
             if (debug) console.log("found no right sidebar");
         }
