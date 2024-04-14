@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Pendle Yield Helper
 // @namespace    http://tampermonkey.net/
-// @version      v1.0.1
+// @version      v1.0.2
 // @description  Show Pendle PT Token TRUE APR
 // @author       Power Ricky
 // @match        https://app.pendle.finance/*
 // @require      https://code.jquery.com/jquery-3.7.1.min.js#sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @require      https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=app.pendle.com
 // @grant        none
 // ==/UserScript==
 
