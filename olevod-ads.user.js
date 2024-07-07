@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         olevod ads remover
 // @namespace    http://tampermonkey.net/
-// @version      1.0.5
+// @version      1.0.6
 // @description  remove unusefull ads from oledvod website
 // @author       Power Ricky
 // @require      https://code.jquery.com/jquery-3.7.1.min.js#sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
@@ -37,6 +37,7 @@
 
             $("div.search.pc-search").remove();
             $(".pc-sdier").remove();
+            $(".el-image__inner").remove();
             if (debug) console.log("interval cleared");
         } else {
             if (debug) console.log("found no right sidebar");
